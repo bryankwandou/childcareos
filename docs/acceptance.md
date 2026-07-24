@@ -26,6 +26,14 @@ Validated on July 24, 2026 against the production Next.js bundle.
 - Finalize and deliberate guardian notification each returned `200`.
 - `/dashboard` and `/guardian` each returned `200`.
 
+## AI and Solana proof
+
+- The Groq operations agent is configured through encrypted Vercel environment variables and uses a safety-constrained system prompt.
+- The dashboard includes an injected-wallet connection flow, devnet balance check, faucet request, transaction signing, confirmation, and explorer link.
+- A real Memo transaction was confirmed on Solana devnet on July 24, 2026.
+- Public wallet: `35z7X59rtyts557Up1RAwpyYN7x2cFqcDc7RjPuNxFzr`.
+- Signature: `26EeeFRZ3NaLfwhABzLrTUpXRq1MPtud1uE8EDeJyUE515YiYVN5w4SkPvBDGd8Sz4QmXpqd8MLR4hxg9TeuovoL`.
+
 ## Production boundary
 
 The demo is complete as a credential-free MVP. Production use still requires applying the included Supabase migration, wiring authenticated identities, verifying RLS with a real Supabase test project, configuring jurisdiction-reviewed ratio rules, and implementing an outage continuity plan.

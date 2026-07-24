@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  return { rules: { userAgent: "*", allow: "/" }, sitemap: "https://childcareos.vercel.app/sitemap.xml" };
+  return { rules: { userAgent: "*", allow: "/" }, sitemap: "https://getchildcareos.vercel.app/sitemap.xml" };
 }

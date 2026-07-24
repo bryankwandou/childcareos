@@ -4,6 +4,8 @@ import { FormEvent, useMemo, useState } from "react";
 import Link from "next/link";
 import { AlertTriangle, ArrowLeft, BadgeCheck, Bell, CheckCircle2, ClipboardPlus, DoorOpen, ShieldAlert, ShieldCheck, Users, UserRoundCheck } from "lucide-react";
 import { BrandMark } from "./brand-mark";
+import { AiAgentPanel } from "./ai-agent-panel";
+import { SolanaProofPanel } from "./solana-proof-panel";
 import { evaluateCheckIn } from "@/lib/safety";
 
 type EventItem = { time: string; title: string; detail: string; tone: "good" | "warn" | "bad" };
@@ -145,6 +147,7 @@ export function OperationsDashboard() {
             {incident && <div className="draft-card"><span>{incident.finalized ? "Finalized" : "Draft · Review required"}</span><p>{incident.summary}</p><small>{incident.guardianNotified ? "Guardian notification recorded." : incident.notice}</small><div className="draft-actions">{!incident.finalized && <button onClick={() => updateIncident("finalize")}>Finalize reviewed report</button>}{incident.finalized && !incident.guardianNotified && <button onClick={() => updateIncident("notify")}>Notify guardian</button>}</div></div>}
           </section>
         </div>
+        <div className="assurance-grid"><AiAgentPanel /><SolanaProofPanel /></div>
       </section>
     </main>
   );
