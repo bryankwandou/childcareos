@@ -7,6 +7,8 @@ ChildcareOS is a safety operations prototype for childcare centers. It demonstra
 - Incident drafts grounded in staff observations with mandatory review and separate guardian notification.
 - A real Groq operations agent that advises without changing safety state.
 - Optional Solana wallet connection and signed devnet audit proofs.
+- Ed25519 wallet-ownership challenge before any on-chain proof action is enabled.
+- State-aware structured AI output with risk level, policy block, immediate actions, verification steps, and escalation.
 - Motion-powered page and component transitions with reduced-motion support.
 
 ## Live MVP

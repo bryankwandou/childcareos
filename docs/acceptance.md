@@ -36,6 +36,8 @@ Validated on July 24, 2026 against the production Next.js bundle.
 - Signature: `26EeeFRZ3NaLfwhABzLrTUpXRq1MPtud1uE8EDeJyUE515YiYVN5w4SkPvBDGd8Sz4QmXpqd8MLR4hxg9TeuovoL`.
 - `/proof` exposes public AI configuration, Solana RPC health, signer matching, Memo validation, slot, timestamp, and Explorer evidence.
 - `/api/solana/verify` verifies signatures directly against Solana devnet rather than trusting a local record.
+- Wallet ownership is verified locally with an Ed25519 signed message before the devnet proof button is enabled.
+- The AI agent receives the live Sunflower room snapshot and returns validated structured JSON including `riskLevel` and `policyBlock`.
 
 ## Production boundary
 
