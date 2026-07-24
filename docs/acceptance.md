@@ -29,6 +29,7 @@ Validated on July 24, 2026 against the production Next.js bundle.
 ## AI and Solana proof
 
 - The Groq operations agent is configured through encrypted Vercel environment variables and uses a safety-constrained system prompt.
+- The public `/api/agent` route returned `200` from `llama-3.3-70b-versatile` on July 24, 2026.
 - The dashboard includes an injected-wallet connection flow, devnet balance check, faucet request, transaction signing, confirmation, and explorer link.
 - A real Memo transaction was confirmed on Solana devnet on July 24, 2026.
 - Public wallet: `35z7X59rtyts557Up1RAwpyYN7x2cFqcDc7RjPuNxFzr`.
