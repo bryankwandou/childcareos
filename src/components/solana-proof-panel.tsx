@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { Buffer } from "buffer";
 import bs58 from "bs58";
-import nacl from "tweetnacl";
 import { Connection, LAMPORTS_PER_SOL, PublicKey, Transaction, TransactionInstruction } from "@solana/web3.js";
 import { ExternalLink, Link2, Radio, WalletCards } from "lucide-react";
+import { verifyWalletOwnershipSignature } from "@/lib/wallet-verification";
 
 type SolanaProvider = {
   publicKey?: PublicKey;
@@ -64,7 +64,7 @@ export function SolanaProofPanel() {
       const publicKey = new PublicKey(address);
       const message = new TextEncoder().encode(`ChildcareOS wallet ownership verification\nWallet: ${address}\nIssued: ${new Date().toISOString()}`);
       const signed = await provider.signMessage(message, "utf8");
-      const verified = nacl.sign.detached.verify(message, signed.signature, publicKey.toBytes());
+      const verified = verifyWalletOwnershipSignature(message, signed.signature, publicKey.toBytes());
       if (!verified) throw new Error("The signature did not match the connected public key.");
       setWalletVerified(true);
       setOwnershipSignature(bs58.encode(signed.signature));
