@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, ClipboardCheck, ShieldCheck, UsersRound } from "lucide-react";
+import { motion } from "motion/react";
 import { BrandMark } from "./brand-mark";
 
 const proof = [
@@ -25,7 +28,7 @@ export function LandingPage() {
 
       <section className="hero">
         <div className="shell hero-grid">
-          <div className="hero-copy">
+          <motion.div className="hero-copy" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, ease: "easeOut" }}>
             <div className="eyebrow"><span className="status-dot" /> Center safety system online</div>
             <h1>The ratio is never wrong. The wrong person never picks up.</h1>
             <p>ChildcareOS gives directors and front-desk teams a live operating picture, then blocks the two mistakes that cannot be handled with a warning.</p>
@@ -36,8 +39,8 @@ export function LandingPage() {
             <div className="proof-row">
               {proof.map((item) => <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}
             </div>
-          </div>
-          <div className="hero-panel" aria-label="Room safety preview">
+          </motion.div>
+          <motion.div className="hero-panel" aria-label="Room safety preview" initial={{ opacity: 0, x: 28, rotate: 0.6 }} animate={{ opacity: 1, x: 0, rotate: 0 }} transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }} whileHover={{ y: -6 }}>
             <div className="panel-top"><span>Tuesday · 9:18 AM</span><span className="live-pill">Live</span></div>
             <div className="room-feature">
               <div>
@@ -49,16 +52,16 @@ export function LandingPage() {
             </div>
             <div className="safety-line"><ShieldCheck size={19} /><div><strong>Next check-in is allowed</strong><span>Server evaluation will run again before admission.</span></div></div>
             <div className="safety-line muted"><BadgeCheck size={19} /><div><strong>Pickup list synced</strong><span>14 active authorizations checked this morning.</span></div></div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="product" className="section shell">
         <div className="section-heading"><span className="kicker">Built for the front desk</span><h2>Three workflows. One calm operating picture.</h2></div>
         <div className="feature-grid">
-          <article><UsersRound /><span>01</span><h3>Live ratio control</h3><p>Every check-in is evaluated against active staff, legal ratio, and licensed capacity on the server.</p></article>
-          <article><ShieldCheck /><span>02</span><h3>Pickup hard block</h3><p>Linked is not the same as authorized. Revoked or unverified adults cannot reach checkout.</p></article>
-          <article><ClipboardCheck /><span>03</span><h3>Grounded incident drafts</h3><p>Staff observations become a review-ready draft without inventing details or notifying a guardian automatically.</p></article>
+          <motion.article initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }}><UsersRound /><span>01</span><h3>Live ratio control</h3><p>Every check-in is evaluated against active staff, legal ratio, and licensed capacity on the server.</p></motion.article>
+          <motion.article initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ delay: 0.08 }}><ShieldCheck /><span>02</span><h3>Pickup hard block</h3><p>Linked is not the same as authorized. Revoked or unverified adults cannot reach checkout.</p></motion.article>
+          <motion.article initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ delay: 0.16 }}><ClipboardCheck /><span>03</span><h3>Grounded incident drafts</h3><p>Staff observations become a review-ready draft without inventing details or notifying a guardian automatically.</p></motion.article>
         </div>
       </section>
 

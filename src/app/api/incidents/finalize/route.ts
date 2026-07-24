@@ -5,7 +5,7 @@ import { demoStore } from "@/lib/demo-store";
 const schema = z.object({ incidentId: z.string().uuid() });
 
 export async function POST(request: Request) {
-  const parsed = schema.safeParse(await request.json());
+  const parsed = schema.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "A valid incident is required." }, { status: 400 });
   try {
     return NextResponse.json(demoStore.finalizeIncident(parsed.data.incidentId));
