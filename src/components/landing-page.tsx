@@ -21,6 +21,7 @@ export function LandingPage() {
             <a href="#product">Product</a>
             <a href="#workflow">Workflow</a>
             <Link href="/guardian">Guardian view</Link>
+            <Link href="/proof">Verify proof</Link>
           </nav>
           <Link href="/dashboard" className="button button-dark">Open live demo <ArrowRight size={16} /></Link>
         </div>
