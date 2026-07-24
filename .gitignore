@@ -1,0 +1,12 @@
+/node_modules
+/node_modules.partial
+/node_modules.link
+/.next
+/.next.stale*
+/.vercel
+/.env*
+!.env.example
+*.tsbuildinfo
+npm-debug.log*
+server.*.log
+.server.pid
