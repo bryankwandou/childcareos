@@ -34,6 +34,8 @@ Validated on July 24, 2026 against the production Next.js bundle.
 - A real Memo transaction was confirmed on Solana devnet on July 24, 2026.
 - Public wallet: `35z7X59rtyts557Up1RAwpyYN7x2cFqcDc7RjPuNxFzr`.
 - Signature: `26EeeFRZ3NaLfwhABzLrTUpXRq1MPtud1uE8EDeJyUE515YiYVN5w4SkPvBDGd8Sz4QmXpqd8MLR4hxg9TeuovoL`.
+- `/proof` exposes public AI configuration, Solana RPC health, signer matching, Memo validation, slot, timestamp, and Explorer evidence.
+- `/api/solana/verify` verifies signatures directly against Solana devnet rather than trusting a local record.
 
 ## Production boundary
 

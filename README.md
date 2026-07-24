@@ -12,6 +12,7 @@ ChildcareOS is a safety operations prototype for childcare centers. It demonstra
 ## Live MVP
 
 - Production: `https://getchildcareos.vercel.app`
+- Verification center: `https://getchildcareos.vercel.app/proof`
 - Source: `https://github.com/bryankwandou/childcareos`
 
 ## Run locally
@@ -43,3 +44,5 @@ The production schema and RLS contract are included in `supabase/migrations/001_
 - Public wallet: `35z7X59rtyts557Up1RAwpyYN7x2cFqcDc7RjPuNxFzr`
 - Transaction: `26EeeFRZ3NaLfwhABzLrTUpXRq1MPtud1uE8EDeJyUE515YiYVN5w4SkPvBDGd8Sz4QmXpqd8MLR4hxg9TeuovoL`
 - Cluster: Solana devnet
+
+The public verification center reads this transaction directly from Solana RPC, validates the Memo program payload, checks transaction success, and compares the signer with the documented public wallet.
