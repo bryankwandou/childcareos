@@ -29,7 +29,8 @@ export function ProofCenter() {
 
   useEffect(() => {
     fetch("/api/health").then((response) => response.json()).then(setHealth).catch(() => setHealth({ status: "degraded" }));
-    void verify();
+    const timer = setTimeout(() => { void verify(); }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
